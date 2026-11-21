@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,132 +6,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Explore Campaigns | FUND CONNECT</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f8fc;
-  color: #18304f;
-}
-header {
-  background: white;
-  padding: 20px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  box-shadow: 0 2px 10px #dce5f0;
-}
-.logo { color: #1769d2; font-size: 23px; font-weight: bold; }
-nav a {
-  color: #18304f;
-  text-decoration: none;
-  margin: 0 8px;
-  font-weight: bold;
-}
-.hero {
-  text-align: center;
-  padding: 45px 20px;
-  background: #eaf3ff;
-}
-.hero h1 { color: #1769d2; }
-.container { padding: 35px 7%; }
-.search {
-  display: block;
-  width: 100%;
-  max-width: 500px;
-  margin: 20px auto 35px;
-  padding: 14px;
-  border: 1px solid #ccd8e8;
-  border-radius: 8px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 22px;
-  box-shadow: 0 3px 12px #dce5f0;
-}
-.card h3 { color: #1769d2; }
-.progress {
-  background: #e1e9f3;
-  height: 9px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.bar {
-  background: #1769d2;
-  width: 0%;
-  height: 100%;
-}
-button {
-  background: #1769d2;
-  color: white;
-  border: 0;
-  padding: 12px 18px;
-  border-radius: 7px;
-}
-footer {
-  background: #123d75;
-  color: white;
-  text-align: center;
-  padding: 25px;
-  margin-top: 40px;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f7fc;color:#26364a}
+header{background:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 8px #ddd}
+.logo{font-size:22px;font-weight:bold;color:#1769e0}
+nav a{margin-left:12px;text-decoration:none;color:#26364a;font-size:14px}
+.hero{text-align:center;background:#1769e0;color:white;padding:40px 15px}
+.hero h1{font-size:30px;margin-bottom:12px}
+.hero p{line-height:1.5}
+.container{max-width:1100px;margin:30px auto;padding:0 16px}
+.search{width:100%;padding:14px;border:1px solid #ccd5e2;border-radius:8px;font-size:16px;margin-bottom:25px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px #dce3ed}
+.photo{height:160px;background:linear-gradient(135deg,#b9d8ff,#e4efff);display:flex;align-items:center;justify-content:center;font-size:55px}
+.content{padding:18px}
+.content h2{font-size:19px;margin-bottom:10px;color:#173d70}
+.content p{color:#65748a;line-height:1.5;font-size:14px;margin-bottom:15px}
+.progress{height:9px;background:#e5eaf1;border-radius:10px;overflow:hidden;margin:12px 0}
+.bar{height:100%;background:#1769e0;width:45%}
+.amount{font-size:13px;color:#34445a}
+.amount strong{color:#1769e0}
+.btn{display:block;text-align:center;background:#1769e0;color:white;padding:12px;border-radius:7px;text-decoration:none;margin-top:16px;font-weight:bold}
+footer{text-align:center;background:#102b50;color:white;padding:25px;margin-top:35px}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="logo">FUND CONNECT</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="campaigns.html">Campaigns</a>
-    <a href="login.html">Login</a>
-  </nav>
+<div class="logo">FUND CONNECT</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="campaigns.html">Explore</a>
+<a href="login.html">Log In</a>
+</nav>
 </header>
 
 <section class="hero">
-  <h1>Discover Fundraisers</h1>
-  <p>Find a cause you care about and make a difference.</p>
-  <a href="create-campaign.html">
-    <button>Start a Fundraiser</button>
-  </a>
+<h1>Discover Campaigns</h1>
+<p>Explore causes, share hope, and make a difference together.</p>
 </section>
 
-<div class="container">
-  <input class="search" type="search"
-    placeholder="Search fundraisers..."
-    oninput="searchCampaigns(this.value)">
+<main class="container">
+<input class="search" id="search" placeholder="Search campaigns..." oninput="filterCampaigns()">
 
-  <div class="grid" id="campaignList">
-    <div class="card">
-      <h3>Campaigns Coming Soon</h3>
-      <p>Fundraisers created on FUND CONNECT will appear here once campaign publishing is connected.</p>
-      <div class="progress"><div class="bar"></div></div>
-    </div>
-  </div>
+<div class="cards" id="cards">
+<article class="card">
+<div class="photo">🏥</div>
+<div class="content">
+<h2>Medical Support</h2>
+<p>Help families access important medical care and support during difficult times.</p>
+<div class="progress"><div class="bar"></div></div>
+<div class="amount"><strong>$450</strong> raised of $1,000 goal</div>
+<a class="btn" href="create-campaign.html">Start a Campaign</a>
 </div>
+</article>
+
+<article class="card">
+<div class="photo">📚</div>
+<div class="content">
+<h2>Education for All</h2>
+<p>Support learning opportunities and school supplies for children in need.</p>
+<div class="progress"><div class="bar" style="width:65%"></div></div>
+<div class="amount"><strong>$650</strong> raised of $1,000 goal</div>
+<a class="btn" href="create-campaign.html">Start a Campaign</a>
+</div>
+</article>
+
+<article class="card">
+<div class="photo">🏠</div>
+<div class="content">
+<h2>Community Support</h2>
+<p>Help communities access resources and build a brighter future together.</p>
+<div class="progress"><div class="bar" style="width:30%"></div></div>
+<div class="amount"><strong>$300</strong> raised of $1,000 goal</div>
+<a class="btn" href="create-campaign.html">Start a Campaign</a>
+</div>
+</article>
+</div>
+</main>
 
 <footer>
-  <p>© 2026 FUND CONNECT. Bringing people together.</p>
+<p>© 2026 FUND CONNECT. Together, We Make a Difference.</p>
 </footer>
 
 <script>
-function searchCampaigns(value) {
-  const cards = document.querySelectorAll(".card");
-  cards.forEach(card => {
-    card.style.display =
-      card.innerText.toLowerCase().includes(value.toLowerCase())
-      ? "block" : "none";
-  });
+function filterCampaigns(){
+const term=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(term)?"block":"none";
+});
 }
 </script>
-
 </body>
 </html>
