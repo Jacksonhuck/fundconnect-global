@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,64 +6,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FUND CONNECT | Make a Difference</title>
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      color: #18304f;
+      color: #243247;
       background: #f5f8fc;
     }
     header {
       background: white;
-      padding: 18px 7%;
+      padding: 18px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      box-shadow: 0 2px 10px #dce5f0;
+      box-shadow: 0 2px 8px #dce4ef;
     }
-    .logo { color: #1769d2; font-size: 23px; font-weight: bold; }
+    .logo { color: #1769e0; font-size: 23px; font-weight: bold; }
     nav a {
-      color: #18304f;
+      color: #34445a;
       text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
+      margin-left: 12px;
+      font-size: 14px;
     }
-    .start {
-      background: #1769d2;
+    .hero {
+      background: linear-gradient(120deg, #0757c9, #398cf5);
       color: white;
-      padding: 12px 20px;
+      padding: 65px 7%;
+      text-align: center;
+    }
+    .hero h1 { font-size: 36px; margin-bottom: 15px; }
+    .hero p { font-size: 17px; line-height: 1.6; margin-bottom: 25px; }
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #1262d3;
+      padding: 13px 23px;
       border-radius: 7px;
       text-decoration: none;
       font-weight: bold;
     }
-    .hero {
-      text-align: center;
-      padding: 75px 20px;
-      background: #eaf3ff;
+    .section { padding: 40px 7%; text-align: center; }
+    .section h2 { margin-bottom: 12px; font-size: 27px; }
+    .section p { color: #65748a; line-height: 1.6; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
     }
-    .hero h1 { font-size: 42px; margin-bottom: 15px; }
-    .hero p { font-size: 18px; color: #53677f; }
-    .section { padding: 45px 7%; }
-    .section h2 { text-align: center; font-size: 29px; }
-    .empty {
+    .card {
       background: white;
-      padding: 35px;
+      padding: 25px;
       border-radius: 12px;
-      text-align: center;
-      margin-top: 25px;
+      box-shadow: 0 3px 14px #dce4ef;
     }
+    .card h3 { color: #1769e0; margin-bottom: 10px; }
     footer {
-      background: #123d75;
+      background: #102b50;
       color: white;
       text-align: center;
       padding: 25px;
-      margin-top: 40px;
-    }
-    @media(max-width:600px) {
-      .hero h1 { font-size: 31px; }
-      nav { width: 100%; }
+      margin-top: 25px;
     }
   </style>
 </head>
@@ -71,28 +74,38 @@
     <div class="logo">FUND CONNECT</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#campaigns">Campaigns</a>
-      <a href="login.html">Login</a>
+      <a href="campaigns.html">Explore</a>
+      <a href="login.html">Log In</a>
     </nav>
-    <a class="start" href="signup.html">Start a Fundraiser</a>
   </header>
 
   <section class="hero">
-    <h1>Together, We Can Make a Difference.</h1>
-    <p>Raise funds. Support causes. Change lives.</p>
-    <a class="start" href="signup.html">Start Your Fundraiser</a>
+    <h1>Together, We Can Make a Difference</h1>
+    <p>Start a fundraiser, share your story, and connect with people who care.</p>
+    <a class="btn" href="create-campaign.html">Start a Fundraiser</a>
   </section>
 
-  <section class="section" id="campaigns">
-    <h2>Discover Fundraisers</h2>
-    <div class="empty">
-      <h3>Every Great Change Starts With You</h3>
-      <p>Fundraising campaigns will appear here.</p>
+  <section class="section">
+    <h2>Every Story Deserves Support</h2>
+    <p>Fund Connect brings people together to support meaningful causes around the world.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Start a Campaign</h3>
+        <p>Tell your story and introduce your cause to the world.</p>
+      </div>
+      <div class="card">
+        <h3>Discover Causes</h3>
+        <p>Explore campaigns and learn about causes that matter.</p>
+      </div>
+      <div class="card">
+        <h3>Make an Impact</h3>
+        <p>Every act of support can help someone move forward.</p>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 FUND CONNECT. Bringing people together.</p>
+    <p>© 2026 FUND CONNECT. Together, We Make a Difference.</p>
   </footer>
 </body>
-  </html>
+</html>
