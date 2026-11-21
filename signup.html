@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up | FUND CONNECT</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #edf4ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  background: white;
+  padding: 30px;
+  width: 85%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #ccd9eb;
+}
+h1 { color: #1769d2; text-align: center; }
+p { text-align: center; color: #52647a; }
+input {
+  width: 100%;
+  padding: 13px;
+  margin: 9px 0;
+  border: 1px solid #ccd8e8;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+button {
+  width: 100%;
+  padding: 14px;
+  background: #1769d2;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  font-size: 16px;
+}
+a { color: #1769d2; }
+.back { display: block; text-align: center; margin-top: 18px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>FUND CONNECT</h1>
+<p>Create your account</p>
+<form onsubmit="event.preventDefault(); alert('Welcome! Account registration will be connected to our secure account system in a later step.');">
+<input type="text" placeholder="Full name" required>
+<input type="email" placeholder="Email address" required>
+<input type="password" placeholder="Create password" required>
+<button type="submit">Create Account</button>
+</form>
+<p>Already have an account? <a href="login.html">Login</a></p>
+<a class="back" href="index.html">Back to Home</a>
+</div>
+</body>
+</html>
