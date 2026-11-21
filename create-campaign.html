@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Fundraiser | FUND CONNECT</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #edf4ff;
+  color: #18304f;
+}
+header {
+  background: white;
+  padding: 20px;
+  color: #1769d2;
+  font-size: 23px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #ccd9eb;
+}
+.container {
+  background: white;
+  max-width: 550px;
+  margin: 35px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #ccd9eb;
+}
+h2 { color: #1769d2; text-align: center; }
+label {
+  display: block;
+  margin-top: 17px;
+  font-weight: bold;
+}
+input, textarea, select {
+  width: 100%;
+  padding: 13px;
+  margin-top: 7px;
+  border: 1px solid #ccd8e8;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+textarea { min-height: 120px; }
+button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px;
+  background: #1769d2;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.back {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #1769d2;
+}
+</style>
+</head>
+<body>
+
+<header>FUND CONNECT</header>
+
+<div class="container">
+<h2>Start Your Fundraiser</h2>
+<p>Tell the world about the cause you want to support.</p>
+
+<form onsubmit="event.preventDefault(); alert('Your fundraiser form is ready. Campaign publishing and saving will be connected later.');">
+
+<label>Fundraiser Title</label>
+<input type="text" placeholder="Enter your campaign title" required>
+
+<label>Fundraising Category</label>
+<select required>
+<option value="">Choose category</option>
+<option>Medical</option>
+<option>Education</option>
+<option>Emergency</option>
+<option>Community</option>
+<option>Business</option>
+<option>Other</option>
+</select>
+
+<label>Fundraising Goal (USD)</label>
+<input type="number" min="1" placeholder="Example: 5000" required>
+
+<label>Your Story</label>
+<textarea placeholder="Explain why you are raising funds..." required></textarea>
+
+<label>Campaign Photo</label>
+<input type="file" accept="image/*">
+
+<button type="submit">Create Fundraiser</button>
+
+</form>
+
+<a class="back" href="index.html">Back to Home</a>
+</div>
+
+</body>
+</html>
