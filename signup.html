@@ -63,6 +63,35 @@ a { color: #1769d2; }
 </form>
 <p>Already have an account? <a href="login.html">Login</a></p>
 <a class="back" href="index.html">Back to Home</a>
-</div>
+</div><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabaseClient = window.supabase.createClient(
+  "https://ebeyscfrevsrqmcrjctp.supabase.co",
+  "sb_publishable_XrqvDv0Lk2-OUF05jKZLxA_f0zzJ2O-"
+);
+
+document.getElementById("signupForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const fullName = document.getElementById("fullName").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const { data, error } = await supabaseClient.auth.signUp({
+    email: email,
+    password: password,
+    options: {
+      data: { full_name: fullName }
+    }
+  });
+
+  if (error) {
+    alert(error.message);
+  } else {
+    alert("Account created! Check your email if confirmation is required.");
+  }
+});
+</script>
 </body>
 </html>
