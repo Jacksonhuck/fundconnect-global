@@ -49,11 +49,17 @@ a { color: #1769d2; }
 <div class="container">
 <h1>FUND CONNECT</h1>
 <p>Create your account</p>
-<form onsubmit="event.preventDefault(); alert('Welcome! Account registration will be connected to our secure account system in a later step.');">
-<input type="text" placeholder="Full name" required>
-<input type="email" placeholder="Email address" required>
-<input type="password" placeholder="Create password" required>
-<button type="submit">Create Account</button>
+<form id="signupForm">
+  <input id="fullName" type="text"
+    placeholder="Full name" required>
+
+  <input id="email" type="email"
+    placeholder="Email address" required>
+
+  <input id="password" type="password"
+    placeholder="Create password" required>
+
+  <button type="submit">Create Account</button>
 </form>
 <p>Already have an account? <a href="login.html">Login</a></p>
 <a class="back" href="index.html">Back to Home</a>
